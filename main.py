@@ -1,0 +1,81 @@
+import time
+import pyautogui
+import random
+
+
+def newAcount():
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w',
+                'x', 'y', 'z']
+
+    names = ['James','Robert','John','Michael','Michael','William','Richard','Joseph','Joseph','Charles','Christopher',
+             'Daniel','Matthew','Matthew','Mark','Donald','Steven','Paul','Andrew','Joshua','Kenneth','Kevin','Brian',
+             'George','Timothy','Ronald','Edward','Jason','Jeffrey','Ryan']
+
+    secondNames = ['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Rodriguez','Martinez','Hernandez',
+                  'Lopez','Gonzalez','Wilson','Anderson','Thomas','Taylor','Moore','Jackson','Martin','Lee','Perez','Thompson',
+                  'White','Harris','Sanchez','Clark','Ramirez','Lewis']
+
+    numbers = ["1","2","3","4",'5','6','7','8','9']
+
+
+    pyautogui.moveTo(400, 60, duration=0.2)
+    pyautogui.click()
+    pyautogui.write(
+        'https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com&hl=pl&dsh=S-1828679917%3A1652009001094423&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp' )
+
+    pyautogui.press('enter')
+
+    time.sleep(2)
+
+    # name
+    name = random.choice(names)
+    pyautogui.write(name)
+
+    pyautogui.press('enter')
+
+    # second name
+    second = random.choice(secondNames)
+    pyautogui.write(second)
+    print(second)
+
+    #gmail
+
+    pyautogui.press('enter')
+    gmail = ''
+    for n in range(1):
+        value = random.choice(names)
+        gmail = gmail + value
+    for n in range(1):
+        value = random.choice(secondNames)
+        gmail = gmail + value
+    for n in range(1):
+        value = random.choice(numbers)
+        gmail = gmail + value
+    for n in range(2):
+        value = random.choice(alphabet)
+        gmail = gmail + value
+    for n in range(1):
+        value = random.choice(numbers)
+        gmail = gmail + value
+    pyautogui.write(gmail)
+
+
+
+    #password
+
+    pyautogui.press('enter')
+    pasword = ''
+    for n in range(7):
+        value = random.choice(alphabet)
+        pasword = pasword + value
+    for n in range(1):
+        value = random.choice(numbers)
+        pasword = pasword + value
+
+    pyautogui.write(pasword)
+    pyautogui.press('enter')
+    pyautogui.write(pasword)
+
+    # next page
+
+newAcount()
